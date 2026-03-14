@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+body{
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:black;
+}
+
+img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+#text{
+position:absolute;
+color:white;
+font-size:42px;
+font-weight:bold;
+opacity:0;
+transition:opacity 2s;
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img src="IMG_5912.jpeg">
+
+<div id="text">Thank You For Your Support!</div>
+
+<script>
+
+setTimeout(function(){
+document.getElementById("text").style.opacity=1;
+},1000);
+
+</script>
+
+</body>
+
+</html>
