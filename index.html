@@ -2,47 +2,47 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta charset="UTF-8">
 
 <style>
-
-body{
-margin:0;
-background:white;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-flex-direction:column;
+body {
+  margin: 0;
+  background: white;
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  justify-content: flex-start; /* 靠上 */
+  align-items: center;
+  height: 100vh;
 }
 
 /* 图片 */
-img{
-width:50vmin;
-height:50vmin;
-object-fit:cover;
+#image {
+  width: 60vmin;        /* 大一点 */
+  height: 60vmin;
+  object-fit: cover;
+  opacity: 0;           /* 初始隐藏 */
+  transition: opacity 1.5s;
+  margin-top: 30px;     /* 离顶部距离，可调 */
 }
 
 /* 文字 */
-#text{
-position:absolute;
-top:40px;
-left:40px;
-color:black;
-font-size:70px;
-font-weight:900;
-opacity:0;
-transition:opacity 1.5s;
-font-family:sans-serif;
-line-height:1.1;
+#text {
+  color: black;
+  font-size: 70px;
+  font-weight: 900;
+  opacity: 0;
+  transition: opacity 1.5s;
+  font-family: sans-serif;
+  line-height: 1.1;
+  margin-top: 20px;    /* 图片下面间距 */
+  text-align: center;
 }
-
 </style>
-
 </head>
 
 <body>
 
-<img src="image01.jpg">
+<img id="image" src="image01.jpg">  <!-- 改成你的图片 -->
 
 <div id="text">
 Thank You For<br>
@@ -50,13 +50,17 @@ Your Support!
 </div>
 
 <script>
-
+// 图片延迟1秒显示
 setTimeout(function(){
-document.getElementById("text").style.opacity=1;
-},1000);
+  document.getElementById("image").style.opacity = 1;
+}, 1000);
+
+// 文字延迟1秒显示（和图片同时出现）
+setTimeout(function(){
+  document.getElementById("text").style.opacity = 1;
+}, 1000);
 
 </script>
 
 </body>
-
 </html>
